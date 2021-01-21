@@ -14,6 +14,7 @@
   --color-orange: #feb546;
   --color-black: #000000;
   --color-dark-blue: #2d3f79;
+  --color-light-blue: #9fb2ce;
 
   /* Font size */
   --font-large: 48px;
@@ -238,7 +239,7 @@ p {
 
 /* Skills */
 #skills {
-  background-color: #9fb2ce;
+  background-color: var(--color-light-blue);
 }
 
 .skillset {
@@ -434,4 +435,34 @@ p {
 
 .testimonial__say a {
   color: var(--color-pink);
+}
+
+/* Contact */
+
+#contact {
+  background-color: var(--color-dark-blue);
+}
+
+.contact__title,
+.contact__email,
+.contact__right {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i {
+  transition: all var(--animation-duration) ease;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-light-blue);
 }
