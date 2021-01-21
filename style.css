@@ -13,6 +13,7 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-dark-blue: #2d3f79;
 
   /* Font size */
   --font-large: 48px;
@@ -98,7 +99,7 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between; /*logo와 menu를 양끝으로*/
-  background-color: var(--color-pink);
+  background-color: var(--color-dark-blue);
   align-items: center; /* 반대축 기준으로 center*/
   color: var(--color-white);
   padding: 16px;
@@ -237,7 +238,7 @@ p {
 
 /* Skills */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: #9fb2ce;
 }
 
 .skillset {
@@ -328,4 +329,63 @@ p {
   left: 4px;
   opacity: 0;
   transition: all var(--animation-duration) ease;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap; /*꽉 차면 줄바꿈*/
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.projects {
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.project__desciption {
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--animation-duration) ease;
+  transform: translateY(10px);
+}
+
+.projects:hover .project__desciption {
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+.project__desciption h3 {
+  color: var(--color-white);
+}
+
+.project__desciption h3:after {
+  content: "";
+  display: block;
+  background-color: var(--color-white);
+  height: 2px;
+  width: 250px;
+  position: relative;
+  left: 15px;
+  margin-top: 8px;
 }
