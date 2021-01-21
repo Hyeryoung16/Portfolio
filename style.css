@@ -389,3 +389,49 @@ p {
   left: 15px;
   margin-top: 8px;
 }
+
+/* Tesimonial */
+#testimonials {
+  background-color: var(--color-dark-white);
+}
+
+.testimonials {
+  margin: 40px;
+}
+
+.testimonial {
+  display: flex;
+  margin: 32px;
+}
+
+.testimonial__avatar {
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+  width: 150px;
+  height: 150px;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin-right: 40px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin-left: 40px;
+}
+
+.testimonial__say {
+  background-color: var(--color-light-white);
+  padding: 18px;
+  border-radius: var(--size-border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial__say p {
+  color: var(--color-light-grey);
+}
+
+.testimonial__say a {
+  color: var(--color-pink);
+}
