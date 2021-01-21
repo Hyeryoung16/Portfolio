@@ -336,7 +336,6 @@ p {
   display: flex;
   flex-wrap: wrap; /*꽉 차면 줄바꿈*/
   justify-content: center;
-  max-width: 1000px;
   margin: auto;
 }
 
@@ -402,6 +401,7 @@ p {
 
 .testimonial {
   display: flex;
+  align-items: center;
   margin: 32px;
 }
 
