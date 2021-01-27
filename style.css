@@ -134,6 +134,15 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle__btn{
+  position: absolute;
+  top: 22px;
+  right: 32px;
+  font-size: 24px;
+  color : var(--color-white);
+  display: none; /*평소에는 보여지지 않는다, 클릭도 안됨, (opacity 이용시 클릭 가능)*/
+}
+
 /* Home */
 #home {
   background: url("images/home/home.png") center/cover no-repeat;
@@ -465,4 +474,43 @@ p {
 .contact__links i:hover {
   transform: scale(1.1);
   color: var(--color-light-blue);
+}
+
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px){
+  .navbar__toggle__btn{
+    display : block;
+  }
+  #navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu{
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__stacks{
+    flex-direction: column;
+  }
+
+  .stack{
+    margin-bottom: 30px;
+  }
+
+  .skillset{
+    flex-direction: column;
+  }
+
+  .projects{
+    flex-grow: 1; /*알아서 크기 키워줌*/
+  }
+
+  .testimonial__avatar{
+    width: 80px;
+    height: 80px;
+  }
 }
