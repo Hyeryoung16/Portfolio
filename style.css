@@ -98,9 +98,11 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between; /*logo와 menu를 양끝으로*/
-  background-color: var(--color-dark-blue);
+  background-color: transparent;
   align-items: center; /* 반대축 기준으로 center*/
   color: var(--color-white);
   padding: 16px;
@@ -147,6 +149,7 @@ p {
 #home {
   background: url("images/home/home.png") center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
