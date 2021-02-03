@@ -411,7 +411,7 @@ p {
 .testimonial {
   display: flex;
   align-items: center;
-  margin: 32px;
+  margin: 32px 0;
 }
 
 .testimonial__avatar {
