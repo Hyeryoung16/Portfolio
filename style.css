@@ -487,7 +487,21 @@
     color: var(--color-light-blue);
   }
   
+  .arrow-up{
+    position : fixed;
+    bottom : 50px;
+    right : 50px;
+    font-size: 80px;
+    color: var(--color-black);
+    opacity: 0;
+    pointer-events: none; /*can't click*/
+    transition : all var(--animation-duration) ease-in-out;
+  }
   
+  .arrow-up.visible{
+    opacity: 1;
+    pointer-events: auto;
+  }
   /* For below 768px screen width */
   @media screen and (max-width: 768px){
     .navbar__toggle__btn{
