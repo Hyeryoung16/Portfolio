@@ -1,9 +1,8 @@
 'user strict';
 
+//Navbar Transparent
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
-
-/* Event 등록*/
 document.addEventListener('scroll', () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
@@ -13,6 +12,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
+//Navbar Menu Scrolling 
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener('click', (event)=>{
   const target = event.target;
@@ -25,12 +25,30 @@ navbarMenu.addEventListener('click', (event)=>{
   }
 });
 
+// Home Contact Scrolling
 const contact = document.querySelector(".home__contact");
 contact.addEventListener("click", () => {
   scrollIntoView('#contact');
 });
 
+// Home Transparent
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', ()=>{
+  home.style.opacity = (1 - window.scrollY/homeHeight);
+});
+
+
+
+
+
+
+
+
+
+
 function scrollIntoView(Selection){
   const scrollTo = document.querySelector(Selection);
   scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
