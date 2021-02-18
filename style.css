@@ -368,6 +368,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  .projects.invisible{
+    display: none;
+  }
   
   .project__img {
     max-width: 100%;
