@@ -17,12 +17,20 @@ const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener('click', (event)=>{
   const target = event.target;
   const link = target.dataset.link;
-
   if (link == null){
     return;
   }
   else{
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    scrollIntoView(link);
   }
-})
+});
+
+const contact = document.querySelector(".home__contact");
+contact.addEventListener("click", () => {
+  scrollIntoView('#contact');
+});
+
+function scrollIntoView(Selection){
+  const scrollTo = document.querySelector(Selection);
+  scrollTo.scrollIntoView({behavior: "smooth"});
+}
