@@ -1,520 +1,526 @@
 /* Global */
 :root {
-  /* Color -- 차후 변경*/
-  --color-white: #ffffff;
-  --color-light-white: #eeeeee;
-  --color-dark-white: #bdbdbd;
-  --color-pink: #fe918d;
-  --color-dark-pink: #ff6863;
-  --color-dark-grey: #4d4d4d;
-  --color-grey: #616161;
-  --color-light-grey: #7c7979;
-  --color-blue: #73aace;
-  --color-yellow: #fff7d1;
-  --color-orange: #feb546;
-  --color-black: #000000;
-  --color-dark-blue: #2d3f79;
-  --color-light-blue: #9fb2ce;
-
-  /* Font size */
-  --font-large: 48px;
-  --font-medium: 28px;
-  --font-regular: 18px;
-  --font-small: 16px;
-  --font-micro: 14px;
-
-  /* Font weight */
-  --weight-bold: 700;
-  --weight-semi-bold: 600;
-  --weight-regular: 400;
-
-  /* Size */
-  --size-border-radius: 4px;
-
-  /* Animation Duration */
-  --animation-duration: 300ms;
-}
-
-/* Universal tags */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  cursor: defualt; /*커서 올라갔을 때*/
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-white);
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
-}
-
-button {
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-/* Typography -- 전반적으로 쓰일 text, padding 등의 스타일링*/
-
-h1 {
-  font-size: var(--font-large);
-  font-weight: var(--weight-bold);
-  color: var(--color-black);
-  margin: 16px 0;
-}
-
-h2 {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-  color: var(--color-black);
-  margin: 8px 0;
-}
-
-h3 {
-  font-size: var(--font-regular);
-  font-weight: var(--weight-regular);
-  color: var(--color-black);
-  margin: 8px 0;
-}
-
-p {
-  font-size: var(--font-regular);
-  font-weight: var(--weight-regular);
-  color: var(--color-black);
-  margin: 4px 0;
-}
-
-/* Navbar */
-#navbar {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /*logo와 menu를 양끝으로*/
-  background-color: transparent;
-  align-items: center; /* 반대축 기준으로 center*/
-  color: var(--color-white);
-  padding: 16px;
-}
-
-.navbar__logo {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-}
-
-.navbar__logo__img {
-  width: 40px;
-}
-
-.navbar__menu {
-  display: flex;
-}
-
-.navbar__menu__item {
-  padding: 8px 12px;
-  margin: 0 4px;
-  cursor: pointer;
-  border-radius: var(--size-border-radius);
-}
-
-.navbar__menu__item.active {
-  border: 1px solid var(--color-white);
-}
-
-.navbar__menu__item:hover {
-  background-color: var(--color-dark-pink);
-}
-
-.navbar__toggle__btn{
-  position: absolute;
-  top: 22px;
-  right: 32px;
-  font-size: 24px;
-  color : var(--color-white);
-  display: none; /*평소에는 보여지지 않는다, 클릭도 안됨, (opacity 이용시 클릭 가능)*/
-}
-
-/* Home */
-#home {
-  background: url("images/home/home.png") center/cover no-repeat;
-  padding: 40px;
-  padding-top: 120px;
-  text-align: center;
-}
-
-.home__img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
-}
-
-.home__title,
-.home__description {
-  color: var(--color-white);
-}
-
-.home__contact {
-  font-size: var(--font-regular);
-  font-weight: var(--weight-bold);
-  margin: 24px;
-  padding: 8px 12px;
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
-  border-radius: var(--size-border-radius);
-}
-
-/* Common */
-/*section을 태그선택자가 아닌 class 선택자로 하는 이유 참고*/
-.section_ {
-  text-align: center;
-  padding: 50px;
-  margin: auto; /*margin이 양옆으로 같게*/
-}
-
-.section__container {
-  max-width: 1200px; /*화면늘어났을 때 최대로 늘어날 크기*/
-  margin: auto;
-}
-
-/* About */
-.about__stacks {
-  display: flex;
-  justify-content: space-between;
-  margin: 80px 0;
-}
-
-.stack__icon {
-  width: 170px;
-  height: 170px;
-  line-height: 170px; /*text가 가운데 오게끔 하는 방법 (height만큼)*/
-  border-radius: 50%;
-  border: 2px solid var(--color-black);
-  font-size: 70px;
-  margin: auto;
-  margin-bottom: 16px;
-}
-
-.stack__icon:hover i {
-  color: var(--color-pink);
-  transform: rotate(-30deg) scale(1.1);
-}
-
-.stack__icon i {
-  /*animation을 주고싶을 때*/
-  transition: all var(--animation-durtaion) ease;
-}
-
-.stack__title,
-.stack__description {
-  color: var(--color-dark-grey);
-}
-
-.stack__description {
-  font-size: var(--font-small);
-}
-
-.experience {
-  display: flex;
-  align-items: center;
-  margin: 16px 0;
-}
-
-.experience__decription {
-  margin: 0 16px;
-  text-align: left;
-}
-
-.experience__name,
-.experience__period {
-  color: var(--color-light-grey);
-}
-
-.experience__name {
-  font-size: var(--font-small);
-}
-
-.experience__period {
-  font-size: var(--font-micro);
-}
-
-/* Skills */
-#skills {
-  background-color: var(--color-light-blue);
-}
-
-.skillset {
-  display: flex;
-  background-color: var(--color-light-grey);
-  color: var(--color-light-white);
-  margin: 20px 0;
-}
-
-.skillset__leftside {
-  flex-basis: 60%;
-  background-color: var(--color-dark-grey);
-  padding: 20px 40px;
-}
-
-.skillset__title {
-  color: var(--color-light-white);
-}
-
-.skill {
-  margin-bottom: 32px;
-}
-
-.skill__description {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3px;
-}
-
-.skill__bar {
-  width: 100%;
-  height: 3px;
-  background-color: var(--color-light-grey);
-}
-
-.skill__ratio {
-  height: 3px;
-  background-color: var(--color-orange);
-}
-
-.skillset__rightside {
-  flex-basis: 40%;
-}
-
-.Tools {
-  background-color: var(--color-grey);
-}
-
-.Tools,
-.Etc {
-  padding: 20px;
-}
-
-/* Work */
-.work__category {
-  margin: 40px;
-}
-
-.category__btn {
-  border: 1px solid var(--color-dark-white);
-  border-radius: var(--size-border-radius);
-  font-size: var(--font-regular);
-  padding: 8px 48px;
-}
-
-.category__btn.active,
-.category__btn:hover {
-  background-color: var(--color-pink);
-  color: var(--color-light-white);
-}
-
-.category__btn.active .category__cnt,
-.category__btn:hover .category__cnt {
-  opacity: 1;
-  top: 0;
-}
-
-.category__cnt {
-  background-color: var(--color-orange);
-  border-radius: 50%;
-  font-size: var(--font-micro);
-  height: 18px;
-  width: 18px;
-  display: inline-block;
-  line-height: 18px;
-  position: relative;
-  top: -20px;
-  left: 4px;
-  opacity: 0;
-  transition: all var(--animation-duration) ease;
-}
-
-.work__projects {
-  display: flex;
-  flex-wrap: wrap; /*꽉 차면 줄바꿈*/
-  justify-content: center;
-  margin: auto;
-}
-
-.projects {
-  width: 280px;
-  height: 250px;
-  margin: 2px;
-  background-color: var(--color-light-white);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project__img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.project__desciption {
-  position: absolute;
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  transition: all var(--animation-duration) ease;
-  transform: translateY(10px);
-}
-
-.projects:hover .project__desciption {
-  opacity: 0.8;
-  transform: translateY(0px);
-}
-
-.project__desciption h3 {
-  color: var(--color-white);
-}
-
-.project__desciption h3:after {
-  content: "";
-  display: block;
-  background-color: var(--color-white);
-  height: 2px;
-  width: 250px;
-  position: relative;
-  left: 15px;
-  margin-top: 8px;
-}
-
-/* Tesimonial */
-#testimonials {
-  background-color: var(--color-dark-white);
-}
-
-.testimonials {
-  margin: 40px;
-}
-
-.testimonial {
-  display: flex;
-  align-items: center;
-  margin: 32px;
-}
-
-.testimonial__avatar {
-  border-radius: 50%;
-  border: 2px solid var(--color-black);
-  width: 150px;
-  height: 150px;
-}
-
-.testimonial__avatar:nth-child(odd) {
-  margin-right: 40px;
-}
-
-.testimonial__avatar:nth-child(even) {
-  margin-left: 40px;
-}
-
-.testimonial__say {
-  flex-grow:1;
-  background-color: var(--color-light-white);
-  padding: 18px;
-  border-radius: var(--size-border-radius);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.testimonial__say p {
-  color: var(--color-light-grey);
-}
-
-.testimonial__say a {
-  color: var(--color-pink);
-}
-
-/* Contact */
-
-#contact {
-  background-color: var(--color-dark-blue);
-}
-
-.contact__title,
-.contact__email,
-.contact__right {
-  color: var(--color-white);
-}
-
-.contact__title {
-  margin: 32px 0;
-}
-
-.contact__links {
-  font-size: var(--font-large);
-  margin: 24px 0;
-}
-
-.contact__links i {
-  transition: all var(--animation-duration) ease;
-}
-
-.contact__links i:hover {
-  transform: scale(1.1);
-  color: var(--color-light-blue);
-}
-
-
-/* For below 768px screen width */
-@media screen and (max-width: 768px){
-  .navbar__toggle__btn{
-    display : block;
+    /* Color -- 차후 변경*/
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+    --color-pink: #fe918d;
+    --color-dark-pink: #ff6863;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-blue: #73aace;
+    --color-yellow: #fff7d1;
+    --color-orange: #feb546;
+    --color-black: #000000;
+    --color-dark-blue: #2d3f79;
+    --color-light-blue: #9fb2ce;
+  
+    /* Font size */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+  
+    /* Font weight */
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-regular: 400;
+  
+    /* Size */
+    --size-border-radius: 4px;
+  
+    /* Animation Duration */
+    --animation-duration: 300ms;
   }
-  #navbar{
-    flex-direction: column;
-    align-items: flex-start;
+  
+  /* Universal tags */
+  * {
+    box-sizing: border-box;
   }
-  .navbar__menu{
-    flex-direction: column;
-    text-align: center;
+  
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    cursor: defualt; /*커서 올라갔을 때*/
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  /* Typography -- 전반적으로 쓰일 text, padding 등의 스타일링*/
+  
+  h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    color: var(--color-black);
+    margin: 16px 0;
+  }
+  
+  h2 {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+    color: var(--color-black);
+    margin: 8px 0;
+  }
+  
+  h3 {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--color-black);
+    margin: 8px 0;
+  }
+  
+  p {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--color-black);
+    margin: 4px 0;
+  }
+  
+  /* Navbar */
+  #navbar {
+    position: fixed;
     width: 100%;
-    display: none;
+    display: flex;
+    justify-content: space-between; /*logo와 menu를 양끝으로*/
+    background-color: transparent;
+    align-items: center; /* 반대축 기준으로 center*/
+    color: var(--color-white);
+    padding: 16px;
+    transition: all var(--animation-duration) ease-in-out;
   }
-
-  .about__stacks{
+  
+  #navbar.navbar--dark {
+    background-color: #192a56;
+    padding : 16px;
+  }
+  
+  .navbar__logo {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+  }
+  
+  .navbar__logo__img {
+    width: 40px;
+  }
+  
+  .navbar__menu {
+    display: flex;
+  }
+  
+  .navbar__menu__item {
+    padding: 8px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+  }
+  
+  .navbar__menu__item.active {
+    border: 1px solid var(--color-white);
+  }
+  
+  .navbar__menu__item:hover {
+    background-color: var(--color-dark-pink);
+  }
+  
+  .navbar__toggle__btn{
+    position: absolute;
+    top: 22px;
+    right: 32px;
+    font-size: 24px;
+    color : var(--color-white);
+    display: none; /*평소에는 보여지지 않는다, 클릭도 안됨, (opacity 이용시 클릭 가능)*/
+  }
+  
+  /* Home */
+  #home {
+    background: url("images/home/home.png") center/cover no-repeat;
+    padding: 40px;
+    padding-top: 120px;
+    text-align: center;
+  }
+  
+  .home__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+  }
+  
+  .home__title,
+  .home__description {
+    color: var(--color-white);
+  }
+  
+  .home__contact {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    border-radius: var(--size-border-radius);
+  }
+  
+  /* Common */
+  /*section을 태그선택자가 아닌 class 선택자로 하는 이유 참고*/
+  .section_ {
+    text-align: center;
+    padding: 50px;
+    margin: auto; /*margin이 양옆으로 같게*/
+  }
+  
+  .section__container {
+    max-width: 1200px; /*화면늘어났을 때 최대로 늘어날 크기*/
+    margin: auto;
+  }
+  
+  /* About */
+  .about__stacks {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+  }
+  
+  .stack__icon {
+    width: 170px;
+    height: 170px;
+    line-height: 170px; /*text가 가운데 오게끔 하는 방법 (height만큼)*/
+    border-radius: 50%;
+    border: 2px solid var(--color-black);
+    font-size: 70px;
+    margin: auto;
+    margin-bottom: 16px;
+  }
+  
+  .stack__icon:hover i {
+    color: var(--color-pink);
+    transform: rotate(-30deg) scale(1.1);
+  }
+  
+  .stack__icon i {
+    /*animation을 주고싶을 때*/
+    transition: all var(--animation-durtaion) ease;
+  }
+  
+  .stack__title,
+  .stack__description {
+    color: var(--color-dark-grey);
+  }
+  
+  .stack__description {
+    font-size: var(--font-small);
+  }
+  
+  .experience {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+  }
+  
+  .experience__decription {
+    margin: 0 16px;
+    text-align: left;
+  }
+  
+  .experience__name,
+  .experience__period {
+    color: var(--color-light-grey);
+  }
+  
+  .experience__name {
+    font-size: var(--font-small);
+  }
+  
+  .experience__period {
+    font-size: var(--font-micro);
+  }
+  
+  /* Skills */
+  #skills {
+    background-color: var(--color-light-blue);
+  }
+  
+  .skillset {
+    display: flex;
+    background-color: var(--color-light-grey);
+    color: var(--color-light-white);
+    margin: 20px 0;
+  }
+  
+  .skillset__leftside {
+    flex-basis: 60%;
+    background-color: var(--color-dark-grey);
+    padding: 20px 40px;
+  }
+  
+  .skillset__title {
+    color: var(--color-light-white);
+  }
+  
+  .skill {
+    margin-bottom: 32px;
+  }
+  
+  .skill__description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  
+  .skill__bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-light-grey);
+  }
+  
+  .skill__ratio {
+    height: 3px;
+    background-color: var(--color-orange);
+  }
+  
+  .skillset__rightside {
+    flex-basis: 40%;
+  }
+  
+  .Tools {
+    background-color: var(--color-grey);
+  }
+  
+  .Tools,
+  .Etc {
+    padding: 20px;
+  }
+  
+  /* Work */
+  .work__category {
+    margin: 40px;
+  }
+  
+  .category__btn {
+    border: 1px solid var(--color-dark-white);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-regular);
+    padding: 8px 48px;
+  }
+  
+  .category__btn.active,
+  .category__btn:hover {
+    background-color: var(--color-pink);
+    color: var(--color-light-white);
+  }
+  
+  .category__btn.active .category__cnt,
+  .category__btn:hover .category__cnt {
+    opacity: 1;
+    top: 0;
+  }
+  
+  .category__cnt {
+    background-color: var(--color-orange);
+    border-radius: 50%;
+    font-size: var(--font-micro);
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    line-height: 18px;
+    position: relative;
+    top: -20px;
+    left: 4px;
+    opacity: 0;
+    transition: all var(--animation-duration) ease;
+  }
+  
+  .work__projects {
+    display: flex;
+    flex-wrap: wrap; /*꽉 차면 줄바꿈*/
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .projects {
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: var(--color-light-white);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .project__img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .project__desciption {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: all var(--animation-duration) ease;
+    transform: translateY(10px);
   }
-
-  .stack{
-    margin-bottom: 30px;
+  
+  .projects:hover .project__desciption {
+    opacity: 0.8;
+    transform: translateY(0px);
   }
-
-  .skillset{
+  
+  .project__desciption h3 {
+    color: var(--color-white);
+  }
+  
+  .project__desciption h3:after {
+    content: "";
+    display: block;
+    background-color: var(--color-white);
+    height: 2px;
+    width: 250px;
+    position: relative;
+    left: 15px;
+    margin-top: 8px;
+  }
+  
+  /* Tesimonial */
+  #testimonials {
+    background-color: var(--color-dark-white);
+  }
+  
+  .testimonials {
+    margin: 40px;
+  }
+  
+  .testimonial {
+    display: flex;
+    align-items: center;
+    margin: 32px;
+  }
+  
+  .testimonial__avatar {
+    border-radius: 50%;
+    border: 2px solid var(--color-black);
+    width: 150px;
+    height: 150px;
+  }
+  
+  .testimonial__avatar:nth-child(odd) {
+    margin-right: 40px;
+  }
+  
+  .testimonial__avatar:nth-child(even) {
+    margin-left: 40px;
+  }
+  
+  .testimonial__say {
+    flex-grow:1;
+    background-color: var(--color-light-white);
+    padding: 18px;
+    border-radius: var(--size-border-radius);
+    display: flex;
     flex-direction: column;
+    justify-content: center;
   }
-
-  .projects{
-    flex-grow: 1; /*알아서 크기 키워줌*/
+  
+  .testimonial__say p {
+    color: var(--color-light-grey);
   }
-
-  .testimonial__avatar{
-    width: 80px;
-    height: 80px;
+  
+  .testimonial__say a {
+    color: var(--color-pink);
   }
-}
+  
+  /* Contact */
+  
+  #contact {
+    background-color: var(--color-dark-blue);
+  }
+  
+  .contact__title,
+  .contact__email,
+  .contact__right {
+    color: var(--color-white);
+  }
+  
+  .contact__title {
+    margin: 32px 0;
+  }
+  
+  .contact__links {
+    font-size: var(--font-large);
+    margin: 24px 0;
+  }
+  
+  .contact__links i {
+    transition: all var(--animation-duration) ease;
+  }
+  
+  .contact__links i:hover {
+    transform: scale(1.1);
+    color: var(--color-light-blue);
+  }
+  
+  
+  /* For below 768px screen width */
+  @media screen and (max-width: 768px){
+    .navbar__toggle__btn{
+      display : block;
+    }
+    #navbar{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navbar__menu{
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      display: none;
+    }
+  
+    .about__stacks{
+      flex-direction: column;
+    }
+  
+    .stack{
+      margin-bottom: 30px;
+    }
+  
+    .skillset{
+      flex-direction: column;
+    }
+  
+    .projects{
+      flex-grow: 1; /*알아서 크기 키워줌*/
+    }
+  
+    .testimonial__avatar{
+      width: 80px;
+      height: 80px;
+    }
+  }
